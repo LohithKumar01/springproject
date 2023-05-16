@@ -8,7 +8,9 @@ import lombok.Setter;
 public class EmployeeDTO {
     private Long id;
     private String name;
+    private int age;
+    private float salary;
+    private String city;
     private String designation;
-    private int salary;
 
 }
