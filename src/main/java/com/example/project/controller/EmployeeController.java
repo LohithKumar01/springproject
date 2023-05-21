@@ -11,8 +11,8 @@ import com.example.project.service.EmployeeService;
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
-    @GetMapping
-    public EmployeeDTO getEmployee(@RequestParam("id")int employeeId){
+    @GetMapping("/{employeeId}")
+    public EmployeeDTO getEmployee(@PathVariable int employeeId){
         EmployeeDTO employeeDTO = employeeService.getEmployee(employeeId);
         return employeeDTO;
     }
@@ -31,6 +31,4 @@ public class EmployeeController {
         EmployeeDTO updateEmployeeDTO=employeeService.updateEmployee(employeeDTO);
         return updateEmployeeDTO;
     }
-
-
 }
