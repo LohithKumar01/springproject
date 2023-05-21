@@ -8,20 +8,14 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name="employee_details")
+@Table(name="employees")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-//    @Column(name="name")
+    private Integer id;
     private String name;
-
-//    @Column(name = "designation")
     private String designation;
-
-//    @Column(name="salary")
+    private int age;
+    private String city;
     private int salary;
-
-
 }

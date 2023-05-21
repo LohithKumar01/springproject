@@ -1,6 +1,7 @@
 package com.example.project.controller;
 
 import com.example.project.dto.EmployeeDTO;
+import com.example.project.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.project.service.EmployeeService;
@@ -11,16 +12,25 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
     @GetMapping
-    public EmployeeDTO getEmployee(@RequestParam("id")Long employeeId){
+    public EmployeeDTO getEmployee(@RequestParam("id")int employeeId){
         EmployeeDTO employeeDTO = employeeService.getEmployee(employeeId);
         return employeeDTO;
     }
-
-
     @DeleteMapping
-    public EmployeeDTO deleteEmployee(@RequestParam("id")Long employeeId){
-        EmployeeDTO employeeDTO=employeeService.deleteEmployee(employeeId);
-        return employeeDTO;
+    public String deleteEmployee(@RequestParam("id")int employeeId){
+        String status=employeeService.deleteEmployee(employeeId);
+        return status;
     }
+    @PostMapping
+    public EmployeeDTO addEmployee(@RequestBody EmployeeDTO employeeDTO){
+        EmployeeDTO createEmployeeDTO=employeeService.createEmployee(employeeDTO);
+        return createEmployeeDTO;
+    }
+    @PutMapping
+    public EmployeeDTO updateEmployee(@RequestBody EmployeeDTO employeeDTO){
+        EmployeeDTO updateEmployeeDTO=employeeService.updateEmployee(employeeDTO);
+        return updateEmployeeDTO;
+    }
+
 
 }
