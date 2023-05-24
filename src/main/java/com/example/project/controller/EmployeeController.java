@@ -1,10 +1,9 @@
 package com.example.project.controller;
 
 import com.example.project.dto.EmployeeDTO;
-import com.example.project.entity.Employee;
+import com.example.project.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.project.service.EmployeeService;
 
 @RestController
 @RequestMapping("/employee")
