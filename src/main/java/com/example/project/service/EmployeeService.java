@@ -1,6 +1,8 @@
 package com.example.project.service;
 import com.example.project.dto.EmployeeDTO;
 import com.example.project.entity.Employee;
+import com.example.project.exception.EmployeeException;
+import com.example.project.exception.EmployeeExceptionEnum;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.example.project.repository.EmployeeRepository;
@@ -21,7 +23,8 @@ public class EmployeeService {
             return employeeDTO;
         }
         else {
-            return null;
+            throw new EmployeeException(EmployeeExceptionEnum.BAD_REQUEST);
+
         }
     }
 
