@@ -4,7 +4,6 @@ import org.springframework.http.HttpStatus;
 public enum EmployeeExceptionEnum {
     BAD_REQUEST(7000, "Invalid request", HttpStatus.BAD_REQUEST),
     INTERNAL_SERVER_ERROR(7777,"Internal server error",HttpStatus.INTERNAL_SERVER_ERROR),
-
     OK(7002,"Success",HttpStatus.OK);
 
     EmployeeExceptionEnum(Integer code, String message, HttpStatus httpStatus) {
