@@ -43,9 +43,8 @@ public class EmployeeService {
             Employee newEmployee = new Employee();
             newEmployee.setName(employeeDTO.getName());
             newEmployee.setAge(employeeDTO.getAge());
-            newEmployee.setCity(employeeDTO.getCity());
+            newEmployee.setDepartment_id(employeeDTO.getDepartment_id());
             newEmployee.setSalary(employeeDTO.getSalary());
-            newEmployee.setDesignation(employeeDTO.getDesignation());
 
             Employee savedEmployee = employeeRepository.save(newEmployee);
             BeanUtils.copyProperties(savedEmployee, employeeDTO);
@@ -61,9 +60,8 @@ public class EmployeeService {
         Employee employee = optionalEmployee.get();
         employee.setName(employeeDTO.getName());
         employee.setAge(employeeDTO.getAge());
-        employee.setCity(employeeDTO.getCity());
+        employee.setDepartment_id(employeeDTO.getDepartment_id());
         employee.setSalary(employeeDTO.getSalary());
-        employee.setDesignation(employeeDTO.getDesignation());
 
         Employee savedEmployee = employeeRepository.save(employee);
         BeanUtils.copyProperties(savedEmployee, employeeDTO);

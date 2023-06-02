@@ -10,7 +10,6 @@ public class EmployeeDTO {
     private String name;
     private int age;
     private int salary;
-    private String city;
-    private String designation;
+    private int department_id;
 
 }
